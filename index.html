@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Mata Mosquito</title>
+</head>
+<body>
+    <img src="images/game.png" alt="game" class="game">
+
+    <section>
+        <select name="dificuldade" id="dificuldade">
+            <option value="">--Selecione a nível--</option>
+            <option value="normal">Normal</option>
+            <option value="dificil">Difícil</option>
+            <option value="ChuckNorris">Chuck Norris</option>
+        </select>
+        <button id="iniciar">Iniciar Jogo</button>
+    </section>
+    <script>
+        var iniciar = document.getElementById('iniciar')
+        var nivel = document.getElementById('dificuldade').value
+
+        console.log(nivel)
+        iniciar.addEventListener('click', () => {
+            nivel = document.getElementById('dificuldade').value
+            if(nivel == ''){
+                window.alert('Selecione a dificuldade')
+            } else {
+                window.location.href = 'app.html?' + nivel
+            }
+        })
+    </script>
+</body>
+</html>
